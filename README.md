@@ -15,4 +15,4 @@ $ ```python manage.py runserver```
 
 # 2. How to make this django project
 
-Refer to: [Django Project - Blog/AWMS](https://davidkorea.github.io/2018/02/08/django-project-blog-awms.html
+Refer to: [Django Project - Blog/AWMS](https://davidkorea.github.io/2018/02/08/django-project-blog-awms.html)
