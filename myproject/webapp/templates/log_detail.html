@@ -70,7 +70,7 @@
                         {{ form.errors }}
                     </div>
                     {% for field in form %}
-                        <div class="field">
+                        <div class=" error field">
                             {{ field.label }}
                             {{ field }}
                         </div>
@@ -82,6 +82,7 @@
                             {{ field }}
                         </div>
                     {% endfor %}
+                {% endif %}
 
                 {% csrf_token %}
 
