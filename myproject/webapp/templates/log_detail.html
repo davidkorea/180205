@@ -64,13 +64,24 @@
 
             </div>
             <div class="ui divider"></div>
-            <form class="ui form" action="" method="post">
-                {% for field in form %}
-                    <div class="field">
-                        {{ field.label }}
-                        {{ field }}
+            <form class="ui error tiny form" action="" method="post">
+                {% if form.errors %}
+                    <div class="ui error message">
+                        {{ form.errors }}
                     </div>
-                {% endfor %}
+                    {% for field in form %}
+                        <div class="field">
+                            {{ field.label }}
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {% for field in form %}
+                        <div class="field">
+                            {{ field.label }}
+                            {{ field }}
+                        </div>
+                    {% endfor %}
 
                 {% csrf_token %}
 
