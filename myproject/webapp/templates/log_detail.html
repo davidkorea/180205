@@ -65,7 +65,13 @@
             </div>
             <div class="ui divider"></div>
             <form class="ui form" action="" method="post">
-                {{ form.as_p }}
+                {% for field in form %}
+                    <div class="field">
+                        {{ field.label }}
+                        {{ field }}
+                    </div>
+                {% endfor %}
+
                 {% csrf_token %}
 
                 <button type="submit" class="ui blue button" >Click</button>
