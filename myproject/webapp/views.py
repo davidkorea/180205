@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse, redirect
 from webapp.models import Caselog, Comment
 from webapp.form import CommentForm
 
@@ -26,9 +26,12 @@ def detail(request):
         form = CommentForm #创建表单
     if request.method == 'POST':
         form = CommentForm(request.POST) #绑定表单，实现数据校验
-        print('==='*30)
-        print(form)
-        print('==='*30)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            comment = form.cleaned_data['comment']
+            c = Comment(name = name, comment = comment)
+            c.save()
+            return redirect(to='detail')
     form = CommentForm
     context = {}
     comment_list = Comment.objects.all()

@@ -66,7 +66,7 @@
             <div class="ui divider"></div>
             <form class="ui form" action="" method="post">
                 {{ form.as_p }}
-
+                {% csrf_token %}
 
                 <button type="submit" class="ui blue button" >Click</button>
             </form>
