@@ -70,7 +70,7 @@
                         {{ form.errors }}
                     </div>
                     {% for field in form %}
-                        <div class=" error field">
+                        <div class=" {{ field.errors|yesno:'error, '}} field">
                             {{ field.label }}
                             {{ field }}
                         </div>
