@@ -17,3 +17,10 @@ class Caselog(models.Model):
     date = models.DateField(null=True)
     def __str__(self):
         return self.caseid
+
+
+class Comment(models.Model):
+    name = models.CharField(null=True, blank=True,max_length=20)
+    comment = models.TextField()
+    def __str__(self):
+        return self.comment

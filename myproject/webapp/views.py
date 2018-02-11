@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from webapp.models import Caselog
+from webapp.models import Caselog, Comment
 
 def default(request):
     print('==='*30)
@@ -19,3 +19,9 @@ def default(request):
         'Caselog': caselog_list
     }
     return render(request, 'default.html', context)
+
+def detail(request):
+    context = {}
+    comment_list = Comment.objects.all()
+    context['comment_list'] = comment_list
+    return render(request, 'log_detail.html', context)

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="{% static 'css/semantic.css' %}" media="screen" title="no title" charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+
+
+        <style type="text/css">
+            .ui.segment.container {
+                width:700px;
+            }
+
+            p {
+                font-family: 'Raleway', sans-serif;
+                font-size:18px;
+            }
+
+            body {
+                background:url(images/star_banner.jpg);
+                background-size:cover;
+                background-repeat:no-repeat;
+                background-attachment:fixed
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="ui image">
+            <img src="" alt="" />
+        </div>
+        <div class="ui  segment padded container" >
+            <h1 class="ui header" style="font-family:'Oswald', sans-serif;font-size:40px">
+                Indonesia pointed at Christmas
+            </h1>
+            <p>
+                his is how it happens:
+                The most sensible alternative to a life of unbearable hardship is to take a chance on a rubber dinghy in Indonesia pointed at Christmas Island, which is part of Australia. If a refugee survives, this person is not praised for valor but rather ejected 4,000 miles away to another island. Nauru Regional Processing Center. Processing sounds temporary, and it is, in the same way purgatory is temporary. Asylum seekers have been known to wait five years for intercession in the form of a “refugee status determination,” or RSD.
+            </p>
+        </div>
+
+        <!-- Comments&Form's here -->
+        <div class="ui segment container" style="width:700px;">
+            <h3 class="ui header" style="font-family:'Oswald', sans-serif;">Comments</h3>
+            <div class="ui comments">
+                <div class="comment">
+                    <div class="avatar">
+                        <img src="http://semantic-ui.com/images/avatar/small/matt.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                        <a href="#" class="author">John Doe</a>
+                        <div class="metadata">
+                            <div class="date">2 days ago</div>
+                        </div>
+                        <p class="text" style="font-family: 'Raleway', sans-serif;">
+                            Great article !
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="ui divider"></div>
+            <form class="ui form" action="" method="post">
+                <div class="field">
+                    <label> name</label>
+                    <input type="text" name="name" value="">
+                </div>
+                <div class="field">
+                    <label>comment</label>
+                    <textarea></textarea>
+                </div>
+
+
+                <button type="submit" class="ui blue button" >Click</button>
+            </form>
+
+        </div>
+
+    </body>
+</html>
