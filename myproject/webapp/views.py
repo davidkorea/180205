@@ -1,10 +1,6 @@
 from django.shortcuts import render
 from webapp.models import Caselog, Comment
-from django import forms
-
-class CommentForm(forms.Form):
-    name = forms.CharField(max_length=50)
-    comment = forms.CharField()
+from webapp.form import CommentForm
 
 def default(request):
     print('==='*30)
