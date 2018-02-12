@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, HttpResponseRedirect, redirect
 from webapp.models import Caselog, Comment
 from webapp.form import CommentForm
 
@@ -32,7 +32,6 @@ def detail(request):
             c = Comment(name = name, comment = comment)
             c.save()
             return redirect(to='detail')
-    form = CommentForm
     context = {}
     comment_list = Comment.objects.all()
     context['comment_list'] = comment_list
