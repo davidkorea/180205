@@ -22,5 +22,7 @@ class Caselog(models.Model):
 class Comment(models.Model):
     name = models.CharField(null=True, blank=True,max_length=20)
     comment = models.TextField()
+    belong_to = models.ForeignKey(to=Caselog, related_name='under_comments',
+                                  null=True, blank=True, on_delete=models.CASCADE)
     def __str__(self):
         return self.comment

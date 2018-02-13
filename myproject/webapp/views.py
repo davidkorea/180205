@@ -33,9 +33,9 @@ def detail(request, page_num):
             c.save()
             return redirect(to='detail')
     context = {}
-    comment_list = Comment.objects.all()
+    # comment_list = Comment.objects.all()
     caselog = Caselog.objects.get(id=page_num)
     context['caselog'] = caselog
-    context['comment_list'] = comment_list
+    # context['comment_list'] = comment_list
     context['form'] = form
     return render(request, 'log_detail.html', context)
