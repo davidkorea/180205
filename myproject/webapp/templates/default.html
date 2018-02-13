@@ -76,9 +76,12 @@
                 {% for item in Caselog %}
                   <div class="item">
                   <div class="content">
-                    <div class="header">
-                      {{ item.caseid }}
-                    </div>
+                    <a href="{% url 'detail' item.id %}">
+                      <div class="header">
+                        {{ item.caseid }}
+                      </div>
+                    </a>
+
                     <div class="description">
                       {{ item.orgnization }}
                     </div>

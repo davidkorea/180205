@@ -20,5 +20,5 @@ from webapp.views import default, detail
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^default/', default, name='default'),
-    url(r'^detail/', detail, name='detail'),
+    url(r'^detail/(?P<page_num>\d+)$', detail, name='detail'),
 ]

@@ -21,7 +21,7 @@ def default(request):
     }
     return render(request, 'default.html', context)
 
-def detail(request):
+def detail(request, page_num):
     if request.method == 'GET':
         form = CommentForm #创建表单
     if request.method == 'POST':
@@ -34,6 +34,8 @@ def detail(request):
             return redirect(to='detail')
     context = {}
     comment_list = Comment.objects.all()
+    caselog = Caselog.objects.get(id=page_num)
+    context['caselog'] = caselog
     context['comment_list'] = comment_list
     context['form'] = form
     return render(request, 'log_detail.html', context)
