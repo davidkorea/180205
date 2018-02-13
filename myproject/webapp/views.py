@@ -31,7 +31,7 @@ def detail(request, page_num):
             comment = form.cleaned_data['comment']
             c = Comment(name = name, comment = comment)
             c.save()
-            return redirect(to='detail')
+            return redirect(to='detail', page_num=page_num)
     context = {}
     # comment_list = Comment.objects.all()
     caselog = Caselog.objects.get(id=page_num)
