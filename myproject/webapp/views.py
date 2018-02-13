@@ -34,7 +34,10 @@ def detail(request, page_num):
             c.save()
             return redirect(to='detail', page_num=page_num)
     context = {}
-    # comment_list = Comment.objects.all()
+    a = Caselog.objects.get(id=page_num)
+    best_comment = Comment.objects.filter(best_comment=True, belong_to=a)
+    if best_comment:
+        context['best_comment'] = best_comment[0]
     caselog = Caselog.objects.get(id=page_num)
     context['caselog'] = caselog
     # context['comment_list'] = comment_list

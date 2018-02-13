@@ -24,5 +24,6 @@ class Comment(models.Model):
     comment = models.TextField()
     belong_to = models.ForeignKey(to=Caselog, related_name='under_comments',
                                   null=True, blank=True, on_delete=models.CASCADE)
+    best_comment = models.BooleanField(default=False)
     def __str__(self):
         return self.comment
