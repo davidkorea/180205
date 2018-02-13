@@ -29,7 +29,8 @@ def detail(request, page_num):
         if form.is_valid():
             name = form.cleaned_data['name']
             comment = form.cleaned_data['comment']
-            c = Comment(name = name, comment = comment)
+            a= Caselog.objects.get(id=page_num)
+            c = Comment(name = name, comment = comment, belong_to = a)
             c.save()
             return redirect(to='detail', page_num=page_num)
     context = {}
